@@ -209,6 +209,27 @@
     letter-spacing:0.08em;text-transform:uppercase;color:var(--olive);
   }
 
+  /* ---------- DURAÇÃO ---------- */
+  .duration-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;}
+  .duration-card{
+    background:var(--cream-soft);
+    border:1px solid var(--olive-light);
+    border-radius:var(--radius);
+    padding:38px 34px;
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .duration-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);}
+  .duration-time{
+    font-family:'Fraunces',serif;font-weight:500;color:var(--bark-deep);
+    font-size:3rem;line-height:1;display:block;margin-bottom:14px;
+  }
+  .duration-time small{
+    font-family:'Jost',sans-serif;font-size:0.95rem;font-weight:500;color:var(--olive);
+    margin-left:6px;text-transform:uppercase;letter-spacing:0.05em;
+  }
+  .duration-card h3{font-size:1.2rem;margin-bottom:8px;}
+  .duration-card p{color:var(--ink-soft);font-size:0.94rem;}
+
   /* ---------- EVENTOS ---------- */
   .events-band{
     background:linear-gradient(120deg,var(--bark-deep),var(--bark));
@@ -378,6 +399,7 @@
     .hero-grid{grid-template-columns:1fr;}
     .lotus-stage{max-width:320px;margin:0 auto;order:-1;}
     .services-grid{grid-template-columns:1fr;}
+    .duration-grid{grid-template-columns:1fr;}
     .hours-grid{grid-template-columns:1fr;}
     .events-band{grid-template-columns:1fr;text-align:left;}
     .sim-grid{grid-template-columns:1fr;}
@@ -406,6 +428,7 @@
     </a>
     <nav class="nav-links">
       <a href="#servicos">Serviços</a>
+      <a href="#duracao">Duração</a>
       <a href="#eventos">Eventos</a>
       <a href="#horarios">Horários</a>
       <a href="#simulador">Simulador</a>
@@ -421,6 +444,7 @@
   </div>
   <div id="mobileMenu" class="mobile-menu">
     <a href="#servicos">Serviços</a>
+    <a href="#duracao">Duração</a>
     <a href="#eventos">Eventos</a>
     <a href="#horarios">Horários</a>
     <a href="#simulador">Simulador</a>
@@ -436,7 +460,7 @@
       <div>
         <span class="eyebrow">Massoterapia individual &amp; corporativa</span>
         <h1>Um cuidado que desacelera o corpo <em>e acalma a mente.</em></h1>
-        <p class="lead">Sessões pensadas para devolver leveza ao seu dia — em casa, no consultório ou no seu evento. Técnica, presença e zelo em cada atendimento.</p>
+        <p class="lead">Sessões pensadas para devolver leveza ao seu dia — em domicílios ou no seu evento. Técnica, presença e zelo em cada atendimento.</p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href="#simulador">Montar minha sessão</a>
           <a class="btn btn-ghost" href="#servicos">Ver serviços</a>
@@ -495,6 +519,29 @@
     </div>
   </section>
 
+  <!-- DURAÇÃO -->
+  <section id="duracao">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Duração da sessão</span>
+        <h2>Sessões de <em>30 ou 60 minutos,</em> pra encaixar no seu tempo</h2>
+        <p>As três técnicas estão disponíveis nos dois formatos. A gente combina qual duração faz mais sentido pra você no momento de agendar.</p>
+      </div>
+      <div class="duration-grid">
+        <div class="duration-card reveal">
+          <span class="duration-time">30<small>min</small></span>
+          <h3>Sessão expressa</h3>
+          <p>Ideal para uma pausa rápida, alívio pontual de tensão ou para encaixar entre compromissos.</p>
+        </div>
+        <div class="duration-card reveal">
+          <span class="duration-time">60<small>min</small></span>
+          <h3>Sessão completa</h3>
+          <p>Tempo para um trabalho mais profundo no corpo todo, com calma e sem pressa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- EVENTOS -->
   <section id="eventos">
     <div class="wrap">
@@ -507,7 +554,7 @@
             <span>Eventos corporativos</span>
             <span>Festas comemorativas</span>
             <span>Sessões expressas</span>
-            <span>Atendimento em grupo</span>
+            <span>Atendimento de grupo</span>
           </div>
         </div>
         <a class="btn btn-primary" href="https://wa.me/5511973342061?text=Ol%C3%A1%2C%20Laura!%20Gostaria%20de%20saber%20mais%20sobre%20massoterapia%20para%20eventos." target="_blank" rel="noopener">Falar sobre meu evento</a>
@@ -546,7 +593,7 @@
       <div class="section-head reveal">
         <span class="eyebrow">Simulador de serviço</span>
         <h2>Monte a sua sessão e fale direto comigo</h2>
-        <p>Escolha a técnica, o material e a distância a partir do Campo Belo. Eu combino o valor com você diretamente no WhatsApp.</p>
+        <p>Escolha a técnica, a duração, o material e a distância a partir do Campo Belo. Eu combino o valor com você diretamente no WhatsApp.</p>
       </div>
 
       <div class="sim-card reveal">
@@ -562,7 +609,15 @@
             </div>
 
             <div class="sim-group">
-              <span class="sim-label">2 — Material (maca e creme)</span>
+              <span class="sim-label">2 — Duração</span>
+              <div class="pill-row" id="durationRow">
+                <button class="pill active" data-name="30 minutos">30 min</button>
+                <button class="pill" data-name="60 minutos">60 min</button>
+              </div>
+            </div>
+
+            <div class="sim-group">
+              <span class="sim-label">3 — Material (maca e creme)</span>
               <div class="pill-row" id="materialRow">
                 <button class="pill active" data-name="Já tenho maca e creme">Já tenho maca e creme</button>
                 <button class="pill" data-name="Preciso do material completo">Preciso do material completo</button>
@@ -570,7 +625,7 @@
             </div>
 
             <div class="sim-group">
-              <span class="sim-label">3 — Distância (a partir do Campo Belo)</span>
+              <span class="sim-label">4 — Distância (a partir do Campo Belo)</span>
               <div class="pill-row" id="distanceRow">
                 <button class="pill active" data-name="Até 5 km do Campo Belo">Até 5 km</button>
                 <button class="pill" data-name="5 a 15 km do Campo Belo">5 a 15 km</button>
@@ -580,7 +635,7 @@
             </div>
 
             <div class="sim-group">
-              <span class="sim-label">4 — Seu nome</span>
+              <span class="sim-label">5 — Seu nome</span>
               <input type="text" id="simName" class="sim-input" placeholder="Como a Laura pode te chamar?">
             </div>
           </div>
@@ -590,6 +645,7 @@
               <span class="rlabel">Sua sessão, resumida</span>
               <div class="sim-breakdown" style="border-top:none;padding-top:0;margin-top:14px;">
                 <div><span>Técnica</span><span id="bkService">Massagem Relaxante</span></div>
+                <div><span>Duração</span><span id="bkDuration">30 minutos</span></div>
                 <div><span>Material</span><span id="bkMaterial">Já tenho maca e creme</span></div>
                 <div><span>Distância</span><span id="bkDistance">Até 5 km</span></div>
               </div>
@@ -619,7 +675,7 @@
           <div class="about-tags">
             <span>2 anos de experiência clínica</span>
             <span>Fisioterapia — Mackenzie, desde 2025</span>
-            <span>Pilates &amp; terapias manuais</span>
+            <span>Terapias Manuais</span>
           </div>
         </div>
       </div>
@@ -690,6 +746,7 @@
   // simulator logic (sem preços — Laura negocia o valor diretamente)
   const state = {
     service:{name:'Massagem Relaxante'},
+    duration:{name:'30 minutos'},
     material:{name:'Já tenho maca e creme'},
     distance:{name:'Até 5 km do Campo Belo', label:'Até 5 km'}
   };
@@ -712,11 +769,13 @@
     });
   }
   wirePillRow('serviceRow','service');
+  wirePillRow('durationRow','duration');
   wirePillRow('materialRow','material');
   wirePillRow('distanceRow','distance');
 
   function render(){
     document.getElementById('bkService').textContent = state.service.name;
+    document.getElementById('bkDuration').textContent = state.duration.name;
     document.getElementById('bkMaterial').textContent = state.material.name;
     document.getElementById('bkDistance').textContent = distanceLabels[state.distance.name] || state.distance.name;
 
@@ -725,7 +784,7 @@
 
     const msg = encodeURIComponent(
       greeting + ' Montei minha sessão pelo site: ' + state.service.name +
-      ', "' + state.material.name + '", distância "' + state.distance.name +
+      ' de ' + state.duration.name + ', "' + state.material.name + '", distância "' + state.distance.name +
       '". Podemos combinar o valor e o horário?'
     );
     document.getElementById('simWaBtn').href = 'https://wa.me/5511973342061?text=' + msg;
